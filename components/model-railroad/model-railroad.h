@@ -36,10 +36,10 @@ public:
 
   void loop() override
   {
-    if (!enable)
-    {
-      return;
-    }
+    // if (!enable)
+    // {
+    //   return;
+    // }
 
     setLight(LED_PIN0, 0);
     setLight(LED_PIN1, 1);
