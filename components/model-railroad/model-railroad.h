@@ -9,6 +9,9 @@
 class ModelRailroadComponent : public Component
 {
 public:
+  float dampFactor = 0.15f; // 0 .. 1, higher is more damped;
+  int minIntensity = 160;
+
   ModelRailroadComponent() {}
 
   void setup() override
@@ -40,15 +43,12 @@ public:
   }
 
 private:
-  const float DAMP_FACTOR = 0.15f; // 0 .. 1, higher is more damped;
-  const int MIN_INTENSITY = 160;
-
   int buffer[4][DAMP_RANDOM_BUFFER_LENGTH];
   int bufferIdx = 0;
 
   int setLight(int pin, int idx)
   {
-    int intensity = int((avg(buffer[idx]) * DAMP_FACTOR + float(random(MIN_INTENSITY, 255)) * (1 - DAMP_FACTOR)) / 2);
+    int intensity = int((avg(buffer[idx]) * dampFactor + float(random(minIntensity, 255)) * (1 - dampFactor)) / 2);
 
     analogWrite(pin, intensity);
     pop(idx);
