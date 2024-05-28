@@ -36,7 +36,7 @@ public:
 
   void loop() override
   {
-    if (enable == false)
+    if (!enable)
     {
       return;
     }
