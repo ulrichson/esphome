@@ -9,6 +9,7 @@
 class ModelRailroadComponent : public Component
 {
 public:
+  bool enable = true;
   float dampFactor = 0.15f; // 0 .. 1, higher is more damped;
   int minIntensity = 160;
 
@@ -35,6 +36,11 @@ public:
 
   void loop() override
   {
+    if (enable == false)
+    {
+      return;
+    }
+
     setLight(LED_PIN0, 0);
     setLight(LED_PIN1, 1);
     setLight(LED_PIN2, 2);
