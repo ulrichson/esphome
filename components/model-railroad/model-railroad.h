@@ -8,7 +8,7 @@
 
 namespace esphome
 {
-  namespace modelraiload
+  namespace modelrailroad
   {
 
     class ModelRailroadComponent : public Component
