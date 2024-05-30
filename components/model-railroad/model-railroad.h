@@ -102,6 +102,6 @@ namespace esphome
       //     }
       //     return sum / DAMP_RANDOM_BUFFER_LENGTH;
       //   }
-      // };
-    }
+    };
   }
+}
