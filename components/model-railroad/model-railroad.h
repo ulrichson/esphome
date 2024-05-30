@@ -46,11 +46,16 @@ namespace esphome
         //   return;
         // }
 
-        setLight(LED_PIN0, 0);
-        setLight(LED_PIN1, 1);
-        setLight(LED_PIN2, 2);
-        setLight(LED_PIN3, 3);
-        delay(1000 /* ms */ / 30 /* fps */);
+        // setLight(LED_PIN0, 0);
+        // setLight(LED_PIN1, 1);
+        // setLight(LED_PIN2, 2);
+        // setLight(LED_PIN3, 3);
+        // delay(1000 /* ms */ / 30 /* fps */);
+
+        digitalWrite(2, LOW);
+        delay(500);
+        digitalWrite(2, HIGH);
+        delay(500);
       }
 
     private:

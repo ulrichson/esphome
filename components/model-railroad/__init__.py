@@ -4,8 +4,8 @@ from esphome.const import CONF_ID
 
 DEPENDENCIES = []
 
-my_custom_component_ns = cg.esphome_ns.namespace('modelrailroad')
-ModelRailroadComponent = my_custom_component_ns.class_('ModelRailroadComponent', cg.Component)
+modelrailroad_ns = cg.esphome_ns.namespace('modelrailroad')
+ModelRailroadComponent = modelrailroad_ns.class_('ModelRailroadComponent', cg.Component)
 
 CONFIG_SCHEMA = cv.Schema({
     cv.GenerateID(): cv.declare_id(ModelRailroadComponent),
