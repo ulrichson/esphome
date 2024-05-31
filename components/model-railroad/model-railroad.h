@@ -1,11 +1,5 @@
 #include "esphome.h"
 
-#define LED_PIN0 0
-#define LED_PIN1 1;
-#define LED_PIN2 2;
-#define LED_PIN3 3;
-#define DAMP_RANDOM_BUFFER_LENGTH 128;
-
 namespace esphome
 {
   namespace modelrailroad
@@ -48,7 +42,7 @@ namespace esphome
         // }
 
         currentMs = millis();
-        if (currentMs - previousMs >= intervalMs)
+        if (currentMs - previousMs >= INTERVAL_MS)
         {
           previousMs = currentMs;
           setLight(LED_PIN0, 0);
@@ -64,12 +58,17 @@ namespace esphome
       }
 
     private:
+      const long INTERVAL_MS = 1000 /* ms */ / 30 /* fps */;
+      const unsigned int LED_PIN0 = 0;
+      const unsigned int LED_PIN1 = 1;
+      const unsigned int LED_PIN2 = 2;
+      const unsigned int LED_PIN3 = 3;
+      const unsigned int DAMP_RANDOM_BUFFER_LENGTH = 128;
+
       int buffer[4][DAMP_RANDOM_BUFFER_LENGTH];
       int bufferIdx = 0;
-
       unsigned long currentMs = 0;
       unsigned long previousMs = 0;
-      const long intervalMs = 1000 /* ms */ / 30 /* fps */;
 
       int setLight(int pin, int idx)
       {
