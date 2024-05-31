@@ -7,55 +7,6 @@ namespace esphome
 
     class ModelRailroadComponent : public Component
     {
-    public:
-      bool enable = true;
-      float dampFactor = 0.15f; // 0 .. 1, higher is more damped;
-      int minIntensity = 160;
-
-      ModelRailroadComponent() {}
-
-      void setup() override
-      {
-        pinMode(LED_PIN0, OUTPUT);
-        pinMode(LED_PIN1, OUTPUT);
-        pinMode(LED_PIN2, OUTPUT);
-        pinMode(LED_PIN3, OUTPUT);
-        digitalWrite(LED_PIN0, LOW);
-        digitalWrite(LED_PIN1, LOW);
-        digitalWrite(LED_PIN2, LOW);
-        digitalWrite(LED_PIN3, LOW);
-        for (int i = 0; i < 4; i++)
-        {
-          for (int j = 0; j < DAMP_RANDOM_BUFFER_LENGTH; j++)
-          {
-            buffer[i][j] = 0;
-          }
-        }
-        // pinMode(2, OUTPUT);
-      }
-
-      void loop() override
-      {
-        // if (!enable)
-        // {
-        //   return;
-        // }
-
-        currentMs = millis();
-        if (currentMs - previousMs >= INTERVAL_MS)
-        {
-          previousMs = currentMs;
-          setLight(LED_PIN0, 0);
-          setLight(LED_PIN1, 1);
-          setLight(LED_PIN2, 2);
-          setLight(LED_PIN3, 3);
-        }
-
-        // digitalWrite(2, LOW);
-        // delay(500);
-        // digitalWrite(2, HIGH);
-        // delay(500);
-      }
 
     private:
       const long INTERVAL_MS = 1000 /* ms */ / 30 /* fps */;
@@ -108,6 +59,56 @@ namespace esphome
           sum += values[i];
         }
         return sum / DAMP_RANDOM_BUFFER_LENGTH;
+      }
+
+    public:
+      bool enable = true;
+      float dampFactor = 0.15f; // 0 .. 1, higher is more damped;
+      int minIntensity = 160;
+
+      ModelRailroadComponent() {}
+
+      void setup() override
+      {
+        pinMode(LED_PIN0, OUTPUT);
+        pinMode(LED_PIN1, OUTPUT);
+        pinMode(LED_PIN2, OUTPUT);
+        pinMode(LED_PIN3, OUTPUT);
+        digitalWrite(LED_PIN0, LOW);
+        digitalWrite(LED_PIN1, LOW);
+        digitalWrite(LED_PIN2, LOW);
+        digitalWrite(LED_PIN3, LOW);
+        for (int i = 0; i < 4; i++)
+        {
+          for (int j = 0; j < DAMP_RANDOM_BUFFER_LENGTH; j++)
+          {
+            buffer[i][j] = 0;
+          }
+        }
+        // pinMode(2, OUTPUT);
+      }
+
+      void loop() override
+      {
+        // if (!enable)
+        // {
+        //   return;
+        // }
+
+        currentMs = millis();
+        if (currentMs - previousMs >= INTERVAL_MS)
+        {
+          previousMs = currentMs;
+          setLight(LED_PIN0, 0);
+          setLight(LED_PIN1, 1);
+          setLight(LED_PIN2, 2);
+          setLight(LED_PIN3, 3);
+        }
+
+        // digitalWrite(2, LOW);
+        // delay(500);
+        // digitalWrite(2, HIGH);
+        // delay(500);
       }
     };
   }
