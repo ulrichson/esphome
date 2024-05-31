@@ -9,12 +9,12 @@ namespace esphome
     {
 
     private:
-      const long INTERVAL_MS = 1000 /* ms */ / 30 /* fps */;
-      const unsigned int LED_PIN0 = 0;
-      const unsigned int LED_PIN1 = 1;
-      const unsigned int LED_PIN2 = 2;
-      const unsigned int LED_PIN3 = 3;
-      const unsigned int DAMP_RANDOM_BUFFER_LENGTH = 128;
+      constexpr static long INTERVAL_MS = 1000 /* ms */ / 30 /* fps */;
+      constexpr static unsigned int LED_PIN0 = 0;
+      constexpr static unsigned int LED_PIN1 = 1;
+      constexpr static unsigned int LED_PIN2 = 2;
+      constexpr static unsigned int LED_PIN3 = 3;
+      constexpr static unsigned int DAMP_RANDOM_BUFFER_LENGTH = 128;
 
       int buffer[4][DAMP_RANDOM_BUFFER_LENGTH];
       int bufferIdx = 0;
