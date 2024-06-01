@@ -7,7 +7,7 @@ namespace esphome
   namespace modelrailway
   {
 
-    class ModelRailwayComponent : public LightOutput public Component
+    class ModelRailwayComponent : public LightOutput, public Component
     {
 
     private:
