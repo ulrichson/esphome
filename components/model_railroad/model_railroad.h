@@ -5,7 +5,7 @@
 
 namespace esphome
 {
-  namespace modelrailroad
+  namespace model_railroad
   {
 
     class ModelRailroadComponent : public light::LightOutput public Component
