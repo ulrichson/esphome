@@ -1,14 +1,13 @@
 #pragma once
 
 #include "esphome.h"
-// #include "esphome/components/light/light_output.h"
 
 namespace esphome
 {
   namespace modelrailway
   {
 
-    class ModelRailwayComponent : public esphome::components::light::LightOutput public Component
+    class ModelRailwayComponent : public LightOutput public Component
     {
 
     private:
@@ -71,7 +70,7 @@ namespace esphome
 
       ModelRailwayComponent() {}
 
-      void write_state(esphome::components::light::LightState *state) override
+      void write_state(LightState *state) override
       {
         // enabled =
       }
