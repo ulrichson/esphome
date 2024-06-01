@@ -8,10 +8,10 @@ from esphome.components import (
 DEPENDENCIES = []
 
 modelrailway_ns = cg.esphome_ns.namespace('modelrailway')
-ModelRailwayComponentx = modelrailway_ns.class_('ModelRailwayComponent', light.LightOutput, cg.Component)
+ModelRailwayComponent = modelrailway_ns.class_('ModelRailwayComponent', cg.Component)
 
 CONFIG_SCHEMA = cv.Schema({
-    cv.GenerateID(): cv.declare_id(ModelRailwayComponentx),
+    cv.GenerateID(): cv.declare_id(ModelRailwayComponent),
 }).extend(cv.COMPONENT_SCHEMA)
 
 async def to_code(config):
