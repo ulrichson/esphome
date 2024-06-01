@@ -1,3 +1,5 @@
+#pragma once
+
 #include "esphome.h"
 
 namespace esphome
@@ -66,7 +68,11 @@ namespace esphome
       float dampFactor = 0.15f; // 0 .. 1, higher is more damped;
       int minIntensity = 160;
 
-      ModelRailroadComponent() {}
+      ModelRailroadComponent(esphome::template_::TemplateSwitch *&_enable)
+      {
+        _enable->add_on_state_callback([this](bool newState)
+                                       { enable = newState; });
+      }
 
       void setup() override
       {
@@ -85,15 +91,18 @@ namespace esphome
             buffer[i][j] = 0;
           }
         }
-        // pinMode(2, OUTPUT);
       }
 
       void loop() override
       {
-        // if (!enable)
-        // {
-        //   return;
-        // }
+        if (!enable)
+        {
+          digitalWrite(LED_PIN0, LOW);
+          digitalWrite(LED_PIN1, LOW);
+          digitalWrite(LED_PIN2, LOW);
+          digitalWrite(LED_PIN3, LOW);
+          return;
+        }
 
         currentMs = millis();
         if (currentMs - previousMs >= INTERVAL_MS)
@@ -104,11 +113,6 @@ namespace esphome
           setLight(LED_PIN2, 2);
           setLight(LED_PIN3, 3);
         }
-
-        // digitalWrite(2, LOW);
-        // delay(500);
-        // digitalWrite(2, HIGH);
-        // delay(500);
       }
     };
   }
