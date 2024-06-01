@@ -1,14 +1,14 @@
 #pragma once
 
-#include "esphome.h"
-#include "template_switch.h"
+#include "esphome/core/component.h"
+#include "esphome/components/light/light_output.h"
 
 namespace esphome
 {
   namespace modelrailroad
   {
 
-    class ModelRailroadComponent : public Component
+    class ModelRailroadComponent : public light::LightOutput public Component
     {
 
     private:
@@ -69,10 +69,11 @@ namespace esphome
       float dampFactor = 0.15f; // 0 .. 1, higher is more damped;
       int minIntensity = 160;
 
-      ModelRailroadComponent(TemplateSwitch *_enable)
+      ModelRailroadComponent() {}
+
+      void write_state(light::LightState *state) override
       {
-        _enable->add_on_state_callback([this](bool newState)
-                                       { enable = newState; });
+        // enabled =
       }
 
       void setup() override
