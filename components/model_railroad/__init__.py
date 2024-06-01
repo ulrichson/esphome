@@ -8,7 +8,7 @@ from esphome.components import (
 DEPENDENCIES = []
 
 model_railroad_ns = cg.esphome_ns.namespace('model_railroad')
-ModelRailroadComponent = model_railroad_ns.class_('ModelRailroadComponent', cg.Component)
+ModelRailroadComponent = model_railroad_ns.class_('ModelRailroadComponent', light.LightOutput, cg.Component)
 
 CONFIG_SCHEMA = cv.Schema({
     cv.GenerateID(): cv.declare_id(ModelRailroadComponent),
