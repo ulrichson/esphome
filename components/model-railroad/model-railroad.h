@@ -1,6 +1,7 @@
 #pragma once
 
 #include "esphome.h"
+#include "template_switch.h"
 
 namespace esphome
 {
@@ -68,7 +69,7 @@ namespace esphome
       float dampFactor = 0.15f; // 0 .. 1, higher is more damped;
       int minIntensity = 160;
 
-      ModelRailroadComponent(esphome::template_::TemplateSwitch *&_enable)
+      ModelRailroadComponent(TemplateSwitch *_enable)
       {
         _enable->add_on_state_callback([this](bool newState)
                                        { enable = newState; });
