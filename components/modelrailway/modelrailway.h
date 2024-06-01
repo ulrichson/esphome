@@ -8,7 +8,7 @@ namespace esphome
   namespace modelrailway
   {
 
-    class ModelRailwayComponent : public light::LightOutput public Component
+    class ModelRailwayComponent : public esphome::components::light::LightOutput public Component
     {
 
     private:
@@ -71,7 +71,7 @@ namespace esphome
 
       ModelRailwayComponent() {}
 
-      void write_state(light::LightState *state) override
+      void write_state(esphome::components::light::LightState *state) override
       {
         // enabled =
       }
