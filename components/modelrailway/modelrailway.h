@@ -1,3 +1,5 @@
+#pragma once
+
 #include "esphome.h"
 
 namespace esphome
@@ -68,9 +70,16 @@ namespace esphome
 
       ModelRailwayComponent() {}
 
+      LightTraits get_traits() override
+      {
+        auto traits = LightTraits();
+        traits.set_supports_brightness(false);
+        return traits;
+      }
+
       void write_state(LightState *state) override
       {
-        // enabled =
+        state->current_values_as_binary(&enable);
       }
 
       void setup() override
