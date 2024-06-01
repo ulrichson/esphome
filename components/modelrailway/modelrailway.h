@@ -5,10 +5,10 @@
 
 namespace esphome
 {
-  namespace modelrailroad
+  namespace modelrailway
   {
 
-    class ModelRailroadComponent : public light::LightOutput public Component
+    class ModelRailwayComponent : public light::LightOutput public Component
     {
 
     private:
@@ -69,7 +69,7 @@ namespace esphome
       float dampFactor = 0.15f; // 0 .. 1, higher is more damped;
       int minIntensity = 160;
 
-      ModelRailroadComponent() {}
+      ModelRailwayComponent() {}
 
       void write_state(light::LightState *state) override
       {
