@@ -77,7 +77,7 @@ namespace esphome
       light::LightTraits get_traits() override
       {
         auto traits = light::LightTraits();
-        traits.set_supports_brightness(false);
+        traits.set_supported_color_modes({light::ColorMode::ON_OFF});
         return traits;
       }
 
