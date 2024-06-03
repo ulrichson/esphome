@@ -4,7 +4,7 @@ import esphome.config_validation as cv
 from esphome.components import light
 from esphome.const import CONF_OUTPUT_ID
 
-AUTO_LOAD = ["output"]
+AUTO_LOAD = [ "light", "output" ]
 
 modelrailway_ns = cg.esphome_ns.namespace('modelrailway')
 ModelRailwayComponent = modelrailway_ns.class_('ModelRailwayComponent', light.LightOutput, cg.Component)
