@@ -40,7 +40,7 @@ CONF_LIGHT = "light"
 #     await cg.register_component(var, config)
 
 CONFIG_SCHEMA = cv.Schema({
-    cv.GenerateID(): cv.declare_id(ModelRailwayComponent),
+    cv.GenerateID(CONF_ID): cv.declare_id(ModelRailwayComponent),
 }).extend(cv.COMPONENT_SCHEMA)
 
 async def to_code(config):
