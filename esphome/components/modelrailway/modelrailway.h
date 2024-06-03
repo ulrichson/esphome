@@ -86,6 +86,7 @@ namespace esphome
 
       void write_state(light::LightState *state) override
       {
+        ESP_LOGV(TAG, "State");
         state->current_values_as_binary(&enable);
       }
 
