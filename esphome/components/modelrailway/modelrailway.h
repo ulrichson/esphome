@@ -113,14 +113,14 @@ namespace esphome
       void loop() override
       {
         ESP_LOGV(TAG, "Loop");
-        // if (!enable)
-        // {
-        //   digitalWrite(LED_PIN0, LOW);
-        //   digitalWrite(LED_PIN1, LOW);
-        //   digitalWrite(LED_PIN2, LOW);
-        //   digitalWrite(LED_PIN3, LOW);
-        //   return;
-        // }
+        if (!enable)
+        {
+          digitalWrite(LED_PIN0, LOW);
+          digitalWrite(LED_PIN1, LOW);
+          digitalWrite(LED_PIN2, LOW);
+          digitalWrite(LED_PIN3, LOW);
+          return;
+        }
 
         currentMs = millis();
         if (currentMs - previousMs >= INTERVAL_MS)
