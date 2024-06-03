@@ -9,5 +9,7 @@ external_components:
     refresh: 0s
 
 modelrailway:
-  name: "Lichteffekt"
+  # name: "Lichteffekt"
 ```
+
+- `name` is optional and can be used to override the default name
