@@ -30,7 +30,7 @@ CONFIG_SCHEMA = light.BINARY_LIGHT_SCHEMA.extend(
         cv.GenerateID(CONF_OUTPUT_ID): cv.declare_id(ModelRailwayComponent)
         # cv.GenerateID(): cv.declare_id(ModelRailwayComponent),
     }
-)
+).extend(cv.COMPONENT_SCHEMA)
 
 async def to_code(config):
     var = cg.new_Pvariable(config[CONF_OUTPUT_ID])
