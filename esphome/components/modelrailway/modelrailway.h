@@ -16,7 +16,7 @@ namespace esphome
     {
 
     private:
-      constexpr const char *const TAG = "modelrailway";
+      static const char *const TAG = "modelrailway";
       constexpr static long INTERVAL_MS = 1000 /* ms */ / 30 /* fps */;
       constexpr static unsigned int LED_PIN0 = 0;
       constexpr static unsigned int LED_PIN1 = 1;
