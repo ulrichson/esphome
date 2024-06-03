@@ -6,7 +6,7 @@ Add following to the ESPHome Devide:
 external_components:
   - source: github://ulrichson/esphome@main
     components: [modelrailway]
-    refresh: 0s
+    # refresh: 0s
 
 modelrailway:
   # name: "Lichteffekt"
