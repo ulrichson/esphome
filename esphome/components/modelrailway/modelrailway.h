@@ -1,6 +1,7 @@
 #pragma once
 
 #include "esphome/core/component.h"
+#include "esphome/core/log.h"
 #include "esphome/components/light/light_output.h"
 #include "esphome/components/light/light_state.h"
 #include "esphome/components/light/light_traits.h"
@@ -15,6 +16,7 @@ namespace esphome
     {
 
     private:
+      constexpr const char *const TAG = "modelrailway";
       constexpr static long INTERVAL_MS = 1000 /* ms */ / 30 /* fps */;
       constexpr static unsigned int LED_PIN0 = 0;
       constexpr static unsigned int LED_PIN1 = 1;
@@ -88,6 +90,7 @@ namespace esphome
 
       void setup() override
       {
+        ESP_LOGV(TAG, "Setup");
         pinMode(LED_PIN0, OUTPUT);
         pinMode(LED_PIN1, OUTPUT);
         pinMode(LED_PIN2, OUTPUT);
@@ -107,6 +110,7 @@ namespace esphome
 
       void loop() override
       {
+        ESP_LOGV(TAG, "Loop");
         // if (!enable)
         // {
         //   digitalWrite(LED_PIN0, LOW);
