@@ -20,7 +20,7 @@ namespace esphome
       constexpr static unsigned int LED_PIN1 = 1;
       constexpr static unsigned int LED_PIN2 = 2;
       constexpr static unsigned int LED_PIN3 = 3;
-      constexpr static unsigned int DAMP_RANDOM_BUFFER_LENGTH = 128;
+      constexpr static unsigned int DAMP_RANDOM_BUFFER_LENGTH = 32;
 
       int buffer[4][DAMP_RANDOM_BUFFER_LENGTH];
       int bufferIdx = 0;
@@ -107,14 +107,14 @@ namespace esphome
 
       void loop() override
       {
-        if (!enable)
-        {
-          digitalWrite(LED_PIN0, LOW);
-          digitalWrite(LED_PIN1, LOW);
-          digitalWrite(LED_PIN2, LOW);
-          digitalWrite(LED_PIN3, LOW);
-          return;
-        }
+        // if (!enable)
+        // {
+        //   digitalWrite(LED_PIN0, LOW);
+        //   digitalWrite(LED_PIN1, LOW);
+        //   digitalWrite(LED_PIN2, LOW);
+        //   digitalWrite(LED_PIN3, LOW);
+        //   return;
+        // }
 
         currentMs = millis();
         if (currentMs - previousMs >= INTERVAL_MS)
