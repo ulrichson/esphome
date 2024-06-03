@@ -10,6 +10,8 @@ external_components:
 
 modelrailway:
   # name: "Lichteffekt"
+  # restore_mode: RESTORE_DEFAULT_OFF
 ```
 
-- `name` is optional and can be used to override the default name
+- `name`: is optional and can be used to override the default name
+- `restore_mode`: a custom restore mode
