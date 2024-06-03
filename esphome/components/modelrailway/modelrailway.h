@@ -12,11 +12,12 @@ namespace esphome
   namespace modelrailway
   {
 
+    static const char *const TAG = "modelrailway";
+
     class ModelRailwayComponent : public Component, public light::LightOutput
     {
 
     private:
-      static const char *const TAG = "modelrailway";
       constexpr static long INTERVAL_MS = 1000 /* ms */ / 30 /* fps */;
       constexpr static unsigned int LED_PIN0 = 0;
       constexpr static unsigned int LED_PIN1 = 1;
