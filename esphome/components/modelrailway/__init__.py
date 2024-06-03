@@ -28,7 +28,7 @@ CONFIG_SCHEMA = cv.All(
     light.BINARY_LIGHT_SCHEMA.extend(
         {
             cv.GenerateID(CONF_OUTPUT_ID): cv.declare_id(ModelRailwayComponent),
-            cv.Optional(CONF_NAME, default="Effect"): cv.string,
+            cv.Optional(CONF_NAME, default="Light"): cv.string,
             cv.Optional(CONF_RESTORE_MODE, default="RESTORE_DEFAULT_OFF"): cv.enum(
                 RESTORE_MODES, upper=True, space="_"
             ),
