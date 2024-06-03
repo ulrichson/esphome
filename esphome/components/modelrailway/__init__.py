@@ -3,7 +3,6 @@ import esphome.codegen as cg
 import esphome.config_validation as cv
 from esphome.components import light
 from esphome.const import CONF_OUTPUT_ID
-from .. import status_led_ns
 
 AUTO_LOAD = ["output"]
 
