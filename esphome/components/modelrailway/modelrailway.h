@@ -11,7 +11,7 @@ namespace esphome
   namespace modelrailway
   {
 
-    class ModelRailwayComponent : public Component, public LightOutput
+    class ModelRailwayComponent : public Component, public light::LightOutput
     {
 
     private:
@@ -74,14 +74,14 @@ namespace esphome
 
       ModelRailwayComponent() {}
 
-      LightTraits get_traits() override
+      light::LightTraits get_traits() override
       {
-        auto traits = LightTraits();
+        auto traits = light::LightTraits();
         traits.set_supports_brightness(false);
         return traits;
       }
 
-      void write_state(LightState *state) override
+      void write_state(light::LightState *state) override
       {
         state->current_values_as_binary(&enable);
       }
