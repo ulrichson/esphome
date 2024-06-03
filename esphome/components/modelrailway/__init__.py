@@ -33,7 +33,7 @@ CONFIG_SCHEMA = light.BINARY_LIGHT_SCHEMA.extend(
 ).extend(cv.COMPONENT_SCHEMA)
 
 async def to_code(config):
-    var = cg.new_Pvariable(config[CONF_OUTPUT_ID])
+    var = cg.new_Pvariable(config[CONF_ID])
     # var = cg.new_Pvariable(config[CONF_ID])
     await light.register_light(var, config)
     # cg.add(cg.App.register_light(var))
