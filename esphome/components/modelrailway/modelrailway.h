@@ -86,13 +86,13 @@ namespace esphome
 
       void write_state(light::LightState *state) override
       {
-        ESP_LOGV(TAG, "State");
+        // ESP_LOGV(TAG, "State");
         state->current_values_as_binary(&enable);
       }
 
       void setup() override
       {
-        ESP_LOGV(TAG, "Setup");
+        // ESP_LOGV(TAG, "Setup");
         pinMode(LED_PIN0, OUTPUT);
         pinMode(LED_PIN1, OUTPUT);
         pinMode(LED_PIN2, OUTPUT);
@@ -112,7 +112,7 @@ namespace esphome
 
       void loop() override
       {
-        ESP_LOGV(TAG, "Loop");
+        // ESP_LOGV(TAG, "Loop");
         if (!enable)
         {
           digitalWrite(LED_PIN0, LOW);
